@@ -1,7 +1,5 @@
 import { Box, Button, Center, Divider, Heading, HStack, Image, Text, VStack } from 'native-base'
-// import React, { useState, useEffect } from 'react'
-// import Loading from '../layout/Loading'
-// import { SEARCH_BY_ID_URL } from '../../services/api_config'
+
 
 const MovieItem = props => {
 
