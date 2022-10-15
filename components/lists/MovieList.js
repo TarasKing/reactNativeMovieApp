@@ -5,10 +5,10 @@ const MovieList = props => {
   const { navigation, movies } = props
 
   return (
-    <FlatList
+    <FlatList minWidth='100%'
       data={movies}
       renderItem={({ item }) => (
-        <MovieItem
+        <MovieItem minWidth='100%'
           id={item.id}
           title={item.original_title}
           poster_path={item.poster_path}
@@ -16,6 +16,8 @@ const MovieList = props => {
           popularity={item.popularity}
           overview={item.overview}
           navigation={navigation}
+          name={item.name}
+          first_air_date={item.first_air_date}
         />
       )}
     />

@@ -1,16 +1,32 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Tab } from "@react-navigation/native";
 import IndexScreen from "../screens/IndexScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import MoviesScreen from "../screens/MoviesScreen";
+import Movies from '../containers/Movies';
 
 const Stack = createNativeStackNavigator();
+
+
+// function Home() {
+//   return (
+//     <Tab.Navigator>
+//       {/* <Tab.Screen name="Search Results" component={IndexScreen} />
+//       <Tab.Screen name="Movies" component={Movies} />
+//     </Tab.Navigator> */}
+// //   );
+// // }
 
 
 const AppStack = () => {
     
     return (
-    <NavigationContainer>            
+        <NavigationContainer>   
+            <Tab.Navigator>
+                <Tab.Screen name="Search Results" component={IndexScreen} />
+                <Tab.Screen name="Movies" component={Movies} />
+   
         <Stack.Navigator>
             <Stack.Screen
                     name="Index"
@@ -31,6 +47,7 @@ const AppStack = () => {
                         {title: "Movie Details"}
                     } />
             </Stack.Navigator>
+            </Tab.Navigator> 
     </NavigationContainer>
     )
 }

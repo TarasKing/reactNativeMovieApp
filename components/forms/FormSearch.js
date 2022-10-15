@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import { Button, FormControl, HStack, Icon, Input, VStack } from 'native-base'
+import { Button, FormControl, HStack, Icon, Input, VStack, Select, Box, Center, CheckIcon } from 'native-base'
+import { SEARCH_MOVIE_URL, SEARCH_MULTI_URL, SEARCH_TV_URL } from '../../services/api_config'
 
 const FormSearch = props => {
 
-  const { fetchMovies, onInputChange } = props
+  const { fetchMovies, onInputChange, searchType, setSearchType } = props
   const [formSearchData, setFormSearchData] = useState({})
 
   const onSubmit = () => {
@@ -30,10 +31,27 @@ const FormSearch = props => {
               <Icon size={5} ml={2} color='gray.400' as={<Ionicons name='ios-search' />} />
             }
           />
+                 
+        </HStack>
+        <FormControl.Label>Choose search Type</FormControl.Label>
+        <HStack space={2} width='100%' py={1}>
+            <Center justifyContent='center' alignItems="center" space={4}>
+            <Box maxW="300">
+                <Select selectedValue={searchType} Label="Choose a Type"minWidth="200" accessibilityLabel="Choose Search Type:" _selectedItem={{
+                    bg: "teal.600",
+                    endIcon: <CheckIcon size="5" />
+                 }} mt={1} onValueChange={itemValue => setSearchType(itemValue)}>
+                  <Select.Item label="multi" value={SEARCH_MULTI_URL} />
+                  <Select.Item label="Movie" value={SEARCH_MOVIE_URL} />
+                  <Select.Item label="TV" value={SEARCH_TV_URL} />
+                </Select>
+              </Box>
+          </Center >
           <Button onPress={onSubmit} startIcon={<Icon as={Ionicons} name='ios-search' />}>
             Search
           </Button>
         </HStack>
+
       </FormControl>
     </VStack>
   )

@@ -7,7 +7,7 @@ export default function App() {
   return (
 
     <NativeBaseProvider>
-      <Header />
+      {/* <Header /> */}
       <AppStack />
     </NativeBaseProvider>
   );
