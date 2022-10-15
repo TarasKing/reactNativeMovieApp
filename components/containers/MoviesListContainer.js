@@ -34,10 +34,10 @@ const MoviesListContainer = ({ navigation }) => {
 
 
   return (
-    <Container px={3} minWidth='100%'>
+    <Container px={3}>
       <FormSearch fetchMovies={fetchMovies} onInputChange={handleInputChange} setSearchType={setSearchType} searchType={searchType} />
 
-      {isLoading ? <Loading /> : <MovieList movies={movies} navigation={ navigation }/>}
+      {isLoading ? <Loading /> : <MovieList movies={movies} navigation={ navigation } />}
     </Container>
   )
 }

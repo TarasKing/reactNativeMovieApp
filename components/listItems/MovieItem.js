@@ -33,23 +33,11 @@ const MovieItem = props => {
                             >
                                 More Details
                             </Button>
-                      {/* </Box> */}
+                     
                   </VStack>
             </Box> 
         </HStack>
-{/*           
-          
-          <VStack space={4} divider={<Divider />}>
-        <Center>
-          
-          <Text>{overview}</Text>
-        </Center>
 
-        <Box>
-                 
-        </Box> */}
-       
-      {/* </VStack> */}
     </Box>
   )
 }
