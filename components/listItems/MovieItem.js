@@ -1,8 +1,13 @@
 import { Box, Button, Center, Divider, Heading, HStack, Image, Text, VStack } from 'native-base'
-
+// import React, { useState, useEffect } from 'react'
+// import Loading from '../layout/Loading'
+// import { SEARCH_BY_ID_URL } from '../../services/api_config'
 
 const MovieItem = props => {
-    const { id, title, poster_path, release_date, popularity, overview, navigation, name, first_air_date} = props
+
+  const { id, title, poster_path, release_date, popularity, overview, navigation, name, first_air_date
+  } = props
+
   
   const headerTitle = title ? title : name
   const release = release_date ? release_date : first_air_date
@@ -17,7 +22,6 @@ const MovieItem = props => {
                       <Heading fontSize={12} maxWidth='60%'>{headerTitle}</Heading>
                       <Text fontSize={12}>Popularity: {popularity}</Text>
                       <Text fontSize={12}>Release Date: {release}</Text> 
-                      {/* <Box fontSize={10}> */}
             <Button maxWidth='60%'
                           onPress={() => {
                               navigation.navigate('Details', {

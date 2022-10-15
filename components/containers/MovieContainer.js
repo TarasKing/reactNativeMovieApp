@@ -1,10 +1,31 @@
-
+import React, { useState, useEffect } from 'react'
 import { Box, Center, HStack, Image, Text, VStack } from "native-base"
 
 
 const MovieContainer = ({ navigation, route }) => {
-    const { id, title, poster_path, release_date, overview, popularity } = route.params
-                                  
+    const { id, title, poster_path, release_date, overview, popularity
+    } = route.params
+         
+// const [isLoading, setIsLoading] = useState(false)
+//   const [movie, setMovie] = useState("")
+//   const { id,
+//     // title, poster_path, release_date, popularity, overview, navigation, name, first_air_date
+//   } = route.params
+  
+//     const loadTheMovie = async () => { 
+//     setIsLoading(true)
+//     await fetch(`${SEARCH_BY_ID_URL}+${id}`).
+//       then(response => response.json()).
+//       then(data => setMovie(data.results))
+//   }
+  
+//   useEffect(() => {
+//     loadTheMovie()
+//     setIsLoading(false)
+//     console.log("+++++++++++++++++++++++++MOVIE IS",movie)
+//   }, [movie])
+
+
 
     return (
         <Box minWidth='90%' py={3} key={id}>
